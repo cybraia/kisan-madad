@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "422749734260",
+    "project_id": "farmer-ai-17bf1",
+    "storage_bucket": "farmer-ai-17bf1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422749734260:android:492cc9dbd05d83d7459821",
+        "android_client_info": {
+          "package_name": "com.example.farmer_ai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcEbuKUDvzI0QaDS1du05F-au3qNpSqXc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422749734260:android:00f23ddd892a1404459821",
+        "android_client_info": {
+          "package_name": "com.example.farmer_ai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcEbuKUDvzI0QaDS1du05F-au3qNpSqXc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
