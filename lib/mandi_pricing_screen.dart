@@ -27,7 +27,10 @@ class _MandiPricingScreenState extends State<MandiPricingScreen> {
     });
     try {
       final prices = await MandiPricingService.fetchMandiPrices(
-        apiKey: '579b464db66ec23bdd00000139d268d7d96b4c906ef78c57497be4e5',
+        apiKey: String.fromEnvironment(
+          'DATA_GOV_API_KEY',
+          defaultValue: 'YOUR_DATA_GOV_API_KEY_HERE',
+        ),
         commodity: _commodityController.text,
         state: _stateController.text,
         district: _districtController.text,

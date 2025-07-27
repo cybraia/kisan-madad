@@ -1,4 +1,3 @@
-
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
@@ -50,16 +49,19 @@ class MandiPricingService {
     String? state,
     String? district,
     int limit = 30,
-    String? arrivalDate, 
+    String? arrivalDate,
   }) async {
     final params = {
-      'api-key': "579b464db66ec23bdd00000139d268d7d96b4c906ef78c57497be4e5",
+      'api-key':
+          apiKey, // Use the passed apiKey parameter instead of hardcoded value
       'format': 'json',
       'limit': limit.toString(),
       'filters[Commodity]': commodity,
       if (state != null && state.isNotEmpty) 'filters[State]': state,
-      if (district != null && district.isNotEmpty) 'filters[District]': district,
-      if (arrivalDate != null && arrivalDate.isNotEmpty) 'filters[Arrival_Date]': arrivalDate,
+      if (district != null && district.isNotEmpty)
+        'filters[District]': district,
+      if (arrivalDate != null && arrivalDate.isNotEmpty)
+        'filters[Arrival_Date]': arrivalDate,
     };
     final uri = Uri.parse(_baseUrl).replace(queryParameters: params);
     final response = await http.get(uri);
@@ -74,10 +76,16 @@ class MandiPricingService {
 
   /// Basic price forecast using linear trend (last N days)
   /// Returns a list of forecasted modal prices for the next [daysAhead] days
-  static List<double> forecastPrices(List<MandiPrice> prices, {int daysAhead = 7}) {
+  static List<double> forecastPrices(
+    List<MandiPrice> prices, {
+    int daysAhead = 7,
+  }) {
     if (prices.length < 2) {
       // Not enough data to forecast
-      return List.filled(daysAhead, prices.isNotEmpty ? prices.last.modalPrice : 0.0);
+      return List.filled(
+        daysAhead,
+        prices.isNotEmpty ? prices.last.modalPrice : 0.0,
+      );
     }
     // Sort by date ascending
     prices.sort((a, b) => a.arrivalDate.compareTo(b.arrivalDate));

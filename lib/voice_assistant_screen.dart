@@ -14,8 +14,12 @@ import 'utils/constants.dart';
 ///  CONFIG
 /// =======================
 
-const String SARVAM_API_KEY = 'sk_hjzi5sl7_q3jzt8V1uZ84XvmT8XF8DgaY';
-const String GEMINI_API_KEY = geminiApiKey; 
+// Replace with your actual Sarvam API key from environment variables
+const String SARVAM_API_KEY = String.fromEnvironment(
+  'SARVAM_API_KEY',
+  defaultValue: 'YOUR_SARVAM_API_KEY_HERE',
+);
+const String GEMINI_API_KEY = geminiApiKey;
 
 // Endpoints
 const String SARVAM_STT_URL = 'https://api.sarvam.ai/speech-to-text';
